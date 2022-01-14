@@ -6,11 +6,11 @@ const Toast = ({toastList,position}) => {
         <div className={`${styles.container} ${styles[position]}`}>
             {
                 toastList.map((toast,i) => (
-                    <div key={i} style={{backgroundColor: toast.backgroundColor}}>
+                    <div key={i} className={`${styles.notification} ${styles.toast} ${styles[position]} `}  style={{backgroundColor: toast.backgroundColor}} >
                         <button>X</button>
                         <div>
-                            <p>{toast.title}</p>
-                            <p>{toast.description}</p>
+                            <p className={styles.title}>{toast.title}</p>
+                            <p className={styles.description}>{toast.description}</p>
                         </div>
                     </div> 
                 ))
