@@ -11,7 +11,7 @@ function App() {
     switch(type){
       case 'success':
           toastProperties ={
-          id:1,
+          id:list.length+1,
           title:'Succes',
           description: 'This is a success toast component',
           backgroundColor:'#5cb85c'
@@ -19,7 +19,7 @@ function App() {
     break;
     case 'danger':
       toastProperties ={
-      id:2,
+      id:list.length+1,
       title:'Danger',
       description: 'This is a danger toast component',
       backgroundColor:'#d9534f'
@@ -27,7 +27,7 @@ function App() {
 break;
 case 'info':
   toastProperties ={
-  id:3,
+  id:list.length+1,
   title:'Info',
   description: 'This is a danger toast component',
   backgroundColor:'#5bc0de'
@@ -35,7 +35,7 @@ case 'info':
 break;
 case 'waring':
   toastProperties ={
-  id:4,
+  id:list.length+1,
   title:'Warning',
   description: 'This is a warning toast component',
   backgroundColor:'#f0ad4e'
@@ -55,7 +55,7 @@ setList([...list,toastProperties]);
         <Button handleClick={()=> showToast('info')}>Info</Button>
         <Button handleClick={()=> showToast('waring')}>Warning</Button>
       </div>
-      <Toast toastList={list} position="buttom-right"/>
+      <Toast toastList={list} position="buttom-right" setList={setList}/>
     </div>
   );
 }
